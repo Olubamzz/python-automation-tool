@@ -36,5 +36,15 @@ if __name__ == "__main__":
     cleaner.fill_missing("price", 0)
     cleaner.save_cleaned_data("cleaned_sales.csv")
 
+    def normalize_column_names(self):
+        """Convert column names to lowercase and replace spaces with underscores."""
+        self.data.columns = (
+            self.data.columns.str.strip().str.lower().str.replace(" ", "_")
+        )
+        print("🔤 Normalized column names.")
+
+
+
+Added column normalization method and improved code documentation
 
 Added core data cleaning module
